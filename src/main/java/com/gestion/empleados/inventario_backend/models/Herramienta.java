@@ -22,7 +22,7 @@ public class Herramienta {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-     @Column(name = "nombre herramienta", length = 60, nullable = false)
+     @Column(name = "nombreherramienta", length = 60, nullable = false)
     private String nombreHerramienta;
 
      @Column(name = "tipo", length = 60, nullable = false)
@@ -63,7 +63,7 @@ public class Herramienta {
       this.id = id;
     }
 
-    public String getNombreHerramienta() {
+    public String getNombreHerramienta(){
       return nombreHerramienta;
     }
 
