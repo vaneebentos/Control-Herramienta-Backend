@@ -48,7 +48,7 @@ public class EmpleadoControlador {
     
     }
 
-    @PutMapping("/empleado/{id}")
+    @PutMapping("/empleados/{id}")
     public  ResponseEntity<Empleado>actualizarEmpleadoPorId(@PathVariable Long id, @RequestBody Empleado detallesEmpleado){
         Empleado empleado= empleadorepository.findById(id)
                             .orElseThrow(()-> new ResourceNotFoundException("No existe el empleado con el ID :"+ id));
@@ -60,8 +60,8 @@ public class EmpleadoControlador {
         return ResponseEntity.ok(empleadoActualizado);
     
 }
-@DeleteMapping("/empleados/{id}")
-public ResponseEntity<Map<String,Boolean>> eliminarEmpleado(@PathVariable Long id){
+      @DeleteMapping("/empleados/{id}")
+     public ResponseEntity<Map<String,Boolean>> eliminarEmpleado(@PathVariable Long id){
     Empleado empleado = empleadorepository.findById(id)
                         .orElseThrow(() -> new ResourceNotFoundException("No existe el empleado con el ID : " + id));
     
